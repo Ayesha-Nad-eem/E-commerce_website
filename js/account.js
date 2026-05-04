@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (input.type === 'password') {
                 input.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                input.type = 'password';
                 icon.classList.remove('fa-eye-slash');
                 icon.classList.add('fa-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
             }
         });
     });
@@ -24,12 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const validateEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    };
-
-    const validatePhone = (phone) => {
-        // Basic phone validation (at least 8 characters, can include +, -, spaces, and brackets)
-        const re = /^[+]?[\d\s\-\(\)]{8,}$/;
-        return re.test(String(phone));
     };
 
     const setFieldStatus = (inputElement, isValid) => {
@@ -69,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isFormValid) {
                 console.log('Login form submitted successfully!');
+                alert('Login validation passed.');
                 // e.currentTarget.submit();
-                alert('Login successful! (Validation passed)');
             }
         });
     }
@@ -83,12 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let isFormValid = true;
 
             // Fields to validate
-            const firstName = document.getElementById('regFirstName');
-            const lastName = document.getElementById('regLastName');
-            const phone = document.getElementById('regPhone');
             const username = document.getElementById('regUsername');
             const email = document.getElementById('regEmail');
             const password = document.getElementById('regPassword');
+            const confirmPassword = document.getElementById('regConfirmPassword');
 
             // Generic required field validation
             const validateRequired = (input) => {
@@ -100,18 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            validateRequired(firstName);
-            validateRequired(lastName);
             validateRequired(username);
             validateRequired(password);
-
-            // Phone specific validation
-            if (!phone.value.trim() || !validatePhone(phone.value)) {
-                setFieldStatus(phone, false);
-                isFormValid = false;
-            } else {
-                setFieldStatus(phone, true);
-            }
 
             // Email specific validation
             if (!email.value.trim() || !validateEmail(email.value)) {
@@ -121,10 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 setFieldStatus(email, true);
             }
 
+            // Confirm Password validation
+            if (!confirmPassword.value.trim() || confirmPassword.value !== password.value) {
+                setFieldStatus(confirmPassword, false);
+                isFormValid = false;
+            } else {
+                setFieldStatus(confirmPassword, true);
+            }
+
             if (isFormValid) {
                 console.log('Register form submitted successfully!');
+                alert('Registration validation passed. Passwords match.');
                 // e.currentTarget.submit();
-                alert('Registration successful! (Validation passed)');
             }
         });
     }
@@ -136,7 +126,51 @@ document.addEventListener('DOMContentLoaded', () => {
             if (this.value.trim()) {
                 const formGroup = this.closest('.form-group');
                 formGroup.classList.remove('has-error');
+                
+                // Special check for confirm password while typing
+                if (this.id === 'regConfirmPassword') {
+                    const pass = document.getElementById('regPassword');
+                    if (this.value === pass.value) {
+                        formGroup.classList.remove('has-error');
+                    } else if (this.value.length > 0) {
+                        formGroup.classList.add('has-error');
+                    }
+                }
+                if (this.id === 'regPassword') {
+                    const confirmPass = document.getElementById('regConfirmPassword');
+                    if (confirmPass.value.length > 0) {
+                        const confirmGroup = confirmPass.closest('.form-group');
+                        if (this.value === confirmPass.value) {
+                            confirmGroup.classList.remove('has-error');
+                        } else {
+                            confirmGroup.classList.add('has-error');
+                        }
+                    }
+                }
             }
         });
     });
+
+    // Smooth scroll for 'scroll to top'
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide scroll top button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.opacity = '1';
+                scrollTopBtn.style.visibility = 'visible';
+            } else {
+                scrollTopBtn.style.opacity = '0';
+                scrollTopBtn.style.visibility = 'hidden';
+            }
+        });
+    }
 });
