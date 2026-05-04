@@ -54,7 +54,8 @@ body {
     background: var(--white);
     border-radius: 4px;
     overflow: hidden;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .search-bar input {
@@ -248,7 +249,7 @@ body {
    HERO & BREADCRUMBS
    ========================================= */
 .account-hero {
-    background-image: url('../images/image_651066.jpg');
+    background-image: url('../images/hero_bg.jpg');
     background-size: cover;
     background-position: center;
     height: 350px;
@@ -311,6 +312,13 @@ body {
     gap: 80px;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.auth-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--text-primary);
 }
 
 .auth-form {
@@ -507,9 +515,8 @@ body {
 }
 
 .promo-banner {
-    /* Using background color for now until image provided */
     background-color: #111;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/image_651066.jpg'); 
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/banner_bg.png'); 
     background-size: cover;
     background-position: center;
     padding: 100px 20px;
@@ -744,6 +751,8 @@ body {
     align-items: center;
     gap: 15px;
     color: var(--white);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .payment-methods span {
@@ -752,15 +761,9 @@ body {
     font-weight: 600;
 }
 
-.payment-methods i {
-    font-size: 24px;
-}
-
-.afterpay-text {
-    font-style: italic;
-    font-weight: 800;
-    font-size: 16px !important;
-    margin: 0 !important;
+.payment-methods img {
+    height: 24px;
+    object-fit: contain;
 }
 
 .footer-bottom-links {
@@ -833,8 +836,26 @@ body {
         flex-direction: column;
         gap: 20px;
     }
+    .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .footer-bottom-inner {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .account-hero {
+        height: 200px;
+    }
+    .promo-content h2 {
+        font-size: 24px;
+    }
+    .footer-bottom-links {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
