@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My User Account | StoneMart</title>
+    <title>StoneMart | Natural Stone Suppliers</title>
     <link rel="stylesheet" href="../css/account.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -155,132 +156,169 @@
         </div>
     </nav>
 
-    <!-- Account Hero -->
-    <section class="account-hero">
-        <div class="hero-content">
-            <h1>MY USER ACCOUNT</h1>
-        </div>
-    </section>
-
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <a href="#">Home</a> <i class="fa-solid fa-angle-right"></i> <span>My User Account</span>
-        </div>
-    </div>
-
-    <!-- Main Container -->
-    <main class="account-main">
-        <div class="container">
-            <div class="account-grid">
-
-                <!-- Login Section -->
-                <div class="auth-section login-section">
-                    <h2>Login</h2>
-                    <form id="loginForm" class="auth-form" novalidate>
-                        <div class="form-group">
-                            <label for="loginUsername">Username or email address</label>
-                            <input type="text" id="loginUsername" name="loginUsername" required>
-                            <span class="error-message">This field is required.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Password</label>
-                            <div class="password-wrapper">
-                                <input type="password" id="loginPassword" name="loginPassword" required>
-                                <button type="button" class="toggle-password" tabindex="-1">
-                                    <i class="fa-regular fa-eye-slash"></i>
-                                </button>
-                            </div>
-                            <span class="error-message">This field is required.</span>
-                        </div>
-                        <div class="form-group remember-me">
-                            <label class="checkbox-container">
-                                <input type="checkbox" id="rememberMe" name="rememberMe">
-                                <span class="checkmark"></span>
-                                Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn-dark">LOG IN</button>
-                        <div class="form-footer">
-                            <a href="#" class="forgot-password">Lost your password?</a>
-                        </div>
-                    </form>
+    <main class="home-main">
+        <!-- Hero Slider Section -->
+        <section class="hero-slider">
+            <div class="slider-container">
+                <div class="slide active" style="background-image: url('../images/home-banner1.jpg');">
+                    <div class="slide-content">
+                        <h1 class="slide-text">BEGIN WITH STONEMART'S NATURAL STONE INSPIRATION</h1>
+                        <a href="#" class="btn-explore">EXPLORE NATURAL STONES</a>
+                    </div>
                 </div>
-
-                <!-- Register Section -->
-                <div class="auth-section register-section">
-                    <h2>Register</h2>
-                    <form id="registerForm" class="auth-form" novalidate>
-                        <div class="form-row">
-                            <div class="form-group half-width">
-                                <label for="regFirstName">First name</label>
-                                <input type="text" id="regFirstName" name="regFirstName" required>
-                                <span class="error-message">First name is required.</span>
-                            </div>
-                            <div class="form-group half-width">
-                                <label for="regLastName">Last name</label>
-                                <input type="text" id="regLastName" name="regLastName" required>
-                                <span class="error-message">Last name is required.</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="regPhone">Phone</label>
-                            <input type="tel" id="regPhone" name="regPhone" required>
-                            <span class="error-message">Valid phone number is required.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="regUsername">Username</label>
-                            <input type="text" id="regUsername" name="regUsername" required>
-                            <span class="error-message">Username is required.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="regEmail">Email address</label>
-                            <input type="email" id="regEmail" name="regEmail" required>
-                            <span class="error-message">Please enter a valid email address.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="regPassword">Password</label>
-                            <div class="password-wrapper">
-                                <input type="password" id="regPassword" name="regPassword" required>
-                                <button type="button" class="toggle-password" tabindex="-1">
-                                    <i class="fa-regular fa-eye-slash"></i>
-                                </button>
-                            </div>
-                            <span class="error-message">Password is required.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="regConfirmPassword">Confirm Password</label>
-                            <input type="password" id="regConfirmPassword" name="regConfirmPassword" required>
-                            <span class="error-message">Passwords do not match.</span>
-                        </div>
-
-                        <button type="submit" class="btn-dark">REGISTER</button>
-                    </form>
+                <div class="slide" style="background-image: url('../images/home-banner2.jpg');">
+                    <div class="slide-content">
+                        <h1 class="slide-text">PREMIUM PORCELAIN COLLECTION FOR YOUR HOME</h1>
+                        <a href="#" class="btn-explore">EXPLORE PORCELAIN</a>
+                    </div>
                 </div>
-
+                <div class="slide" style="background-image: url('../images/home-banner3.jfif');">
+                    <div class="slide-content">
+                        <h1 class="slide-text">EXCEPTIONAL QUALITY, UNMATCHED BEAUTY</h1>
+                        <a href="#" class="btn-explore">VIEW OUR RANGE</a>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+            <button class="slider-arrow prev-arrow"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="slider-arrow next-arrow"><i class="fa-solid fa-angle-right"></i></button>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro-section container">
+            <div class="intro-grid">
+                <div class="intro-text-col">
+                    <h2>NATURAL STONE SUPPLIERS: TILES, SLABS, PAVERS, AND MOSAICS</h2>
+                    <p>Get the best natural stone supplies from leading quarries in Italy, Turkey, Brazil, Greece, and beyond. Partner with the specialists at StoneMart for premium products and a comprehensive collection of materials.</p>
+                    <a href="tel:0397068653" class="btn-call-intro">Call: 03 9706 8653</a>
+                </div>
+                <div class="intro-image-col">
+                    <div class="placeholder-image kitchen-island">
+                        <!-- Placeholder for Kitchen Island image -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Icons -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="../images/free-quote.svg" alt="Free Quote"></div>
+                    <span class="feature-text">Free Quote</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="../images/discounts.svg" alt="Special Discounts"></div>
+                    <span class="feature-text">Special Discounts</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="../images/door-delivery.svg" alt="Door to Door Delivery"></div>
+                    <span class="feature-text">Door to Door Delivery</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="../images/free-samples.svg" alt="Free Samples"></div>
+                    <span class="feature-text">Free Samples</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><img src="../images/customer-service.svg" alt="Customer Service"></div>
+                    <span class="feature-text">Customer Service</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products container">
+            <div class="section-header">
+                <h2>FEATURED PRODUCTS</h2>
+                <a href="#" class="btn-outline">VIEW ALL PRODUCTS</a>
+            </div>
+            <div class="products-grid">
+                <a href="#" class="product-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="product-info">
+                        <span class="brand">STONE MART</span>
+                        <h3>SILVER WHITE</h3>
+                    </div>
+                </a>
+                <a href="#" class="product-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <div class="product-info">
+                        <span class="brand">STONE SLABS</span>
+                        <h3>TURQUOISE GRANITE</h3>
+                    </div>
+                </a>
+                <a href="#" class="product-card large-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%), url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="product-info">
+                        <span class="brand">NATURAL STONES</span>
+                        <h3>BIANCO CARRARA SLAB HONED</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Shop Our Best Collections (Dark) -->
+        <section class="best-collections">
+            <div class="container">
+                <div class="collections-header">
+                    <h2>SHOP OUR BEST COLLECTIONS</h2>
+                    <p>StoneMart supplies an extensive selection of the finest natural stone Tiles, Mosaics, Slabs and Pavers.</p>
+                </div>
+                <div class="collections-carousel">
+                    <!-- Placeholder Images for Categories -->
+                    <a href="#" class="collection-item">
+                        <div class="collection-img" style="background-image: url('https://images.unsplash.com/photo-1615529162924-f8605388461d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                        <h4>NATURAL STONE TILES</h4>
+                    </a>
+                    <a href="#" class="collection-item">
+                        <div class="collection-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                        <h4>STONE SLABS</h4>
+                    </a>
+                    <a href="#" class="collection-item">
+                        <div class="collection-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                        <h4>STONE PAVERS</h4>
+                    </a>
+                    <a href="#" class="collection-item">
+                        <div class="collection-img" style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                        <h4>POOL COPING TILES</h4>
+                    </a>
+                    <a href="#" class="collection-item">
+                        <div class="collection-img" style="background-image: url('https://images.unsplash.com/photo-1615529162924-f8605388461d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                        <h4>PORCELAIN PAVERS</h4>
+                    </a>
+                </div>
+                <div class="collections-footer">
+                    <a href="#" class="btn-outline-light">VIEW ALL STONE MART RANGE</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Natural Stone Releases -->
+        <section class="latest-releases container">
+            <h2>LATEST NATURAL STONE RELEASES</h2>
+            <div class="releases-grid">
+                <a href="#" class="release-item">
+                    <div class="release-img-wrap">
+                        <div class="release-img" style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                    </div>
+                    <h3 class="release-title">BIANCO CARRARA</h3>
+                </a>
+                <a href="#" class="release-item">
+                    <div class="release-img-wrap">
+                        <div class="release-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                    </div>
+                    <h3 class="release-title">CALACATTA GOLD</h3>
+                </a>
+                <a href="#" class="release-item">
+                    <div class="release-img-wrap">
+                        <div class="release-img" style="background-image: url('https://images.unsplash.com/photo-1615529162924-f8605388461d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                    </div>
+                    <h3 class="release-title">PINK ONYX</h3>
+                </a>
+                <a href="#" class="release-item">
+                    <div class="release-img-wrap">
+                        <div class="release-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80');"></div>
+                    </div>
+                    <h3 class="release-title">NEW YORK MARBLE</h3>
+                </a>
+            </div>
+        </section>
     </main>
-
-    <!-- Instagram Banner -->
-    <section class="instagram-section">
-        <div class="container">
-            <div class="instagram-header">
-                <h2><i class="fa-brands fa-instagram"></i> FOLLOW US ON INSTAGRAM</h2>
-                <span>STONEMART</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Promo Banner -->
-    <section class="promo-banner">
-        <div class="promo-content">
-            <span class="promo-subtitle">STONE MART</span>
-            <h2>TO GET STARTED WITH A PREMIUM RANGE OF BLACK MARBLE SLABS AND WHITE MARBLE SLABS FOR AN AFFORDABLE
-                PRICE, CONTACT US TODAY.</h2>
-            <a href="tel:0397068653" class="btn-call-promo">Call: 03 9706 8653</a>
-        </div>
-    </section>
 
     <!-- Main Footer -->
     <footer class="main-footer">
@@ -403,7 +441,9 @@
     <!-- Scroll to Top Button -->
     <a href="#" class="scroll-top"><i class="fa-solid fa-angle-up"></i></a>
 
+    <!-- Scripts -->
     <script src="../js/account.js"></script>
+    <script src="../js/home.js"></script>
 </body>
 
 </html>

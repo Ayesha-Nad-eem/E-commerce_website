@@ -129,6 +129,21 @@ body {
     align-items: center;
 }
 
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+.mobile-menu-toggle i {
+    margin-right: 8px;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -891,8 +906,56 @@ body {
         gap: 60px;
     }
     
+    .main-nav-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
     .nav-links {
-        display: none; /* simple mobile hide for now */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--white);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links > li > a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    /* Optional: adjust mega menu for mobile to display vertically or simply hide columns and keep it standard dropdown */
+    .mega-menu {
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+    }
+    
+    .dropdown:hover .mega-menu, .dropdown:hover .dropdown-menu {
+        /* Disable hover on mobile, use click. For now keep block but static */
+        position: static;
+        display: none;
+    }
+
+    .nav-actions {
+        order: 2; /* keep call button on the right */
     }
     
     .footer-top-text {
