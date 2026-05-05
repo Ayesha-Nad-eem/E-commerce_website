@@ -117,7 +117,7 @@ body {
 
 /* Bottom Nav */
 .main-nav {
-    background-color: var(--white);
+    background-color: var(--dark-header);
     border-bottom: 1px solid var(--border-color);
     position: relative;
     z-index: 100;
@@ -154,7 +154,7 @@ body {
     display: block;
     padding: 25px 0;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--white);
     font-weight: 600;
     font-size: 14px;
     transition: color 0.3s;
@@ -308,7 +308,7 @@ body {
     background: none;
     cursor: pointer;
     font-size: 18px;
-    color: var(--text-primary);
+    color: var(--white);
     transition: all 0.3s;
 }
 

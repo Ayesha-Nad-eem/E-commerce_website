@@ -1,5 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // --- Mobile Menu Logic ---
+    const menuTrigger = document.querySelector('.mobile-menu-trigger');
+    const sideMenu = document.querySelector('.mobile-side-menu');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const overlay = document.querySelector('.overlay');
+    const dropdownToggles = document.querySelectorAll('.mobile-dropdown .dropdown-toggle');
+
+    const openMenu = () => {
+        sideMenu.classList.add('open');
+        overlay.classList.add('active');
+    };
+
+    const closeMenu = () => {
+        sideMenu.classList.remove('open');
+        overlay.classList.remove('active');
+    };
+
+    if (menuTrigger) {
+        menuTrigger.addEventListener('click', openMenu);
+    }
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMenu);
+    }
+    if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const content = toggle.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                toggle.querySelector('i').classList.remove('fa-angle-up');
+                toggle.querySelector('i').classList.add('fa-angle-down');
+            } else {
+                content.style.display = 'block';
+                toggle.querySelector('i').classList.remove('fa-angle-down');
+                toggle.querySelector('i').classList.add('fa-angle-up');
+            }
+        });
+    });
+
+
     // --- Hero Slider Logic ---
     const slides = document.querySelectorAll('.slide');
     const prevArrow = document.querySelector('.prev-arrow');
